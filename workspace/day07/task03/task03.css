@@ -1,0 +1,76 @@
+fieldset {
+    border-style: groove none none none;
+    text-align: center;
+    border-top-color: #42a5f5;
+    border-top-width: 10px;
+    width: 50%;
+    margin: 10px auto;
+    font-family: 'NanumSquareRoundBold';
+    font-size: 3em;
+    color: #00796b;
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+div#img {
+    background-image: url("img/출발전.png");
+    background-size: 100% 100%;
+    width: 435px;
+    height: 250px;
+    margin: 0 auto;
+    border: 5px solid #00796b;
+}
+
+div input {
+    text-align: center;
+    width: 70%;
+    outline: none;
+    border-style: none none solid none;
+    border-color: #00796b;
+    border-width: 5px;
+    font-size: 1.5rem;
+}
+
+div.wrap {
+    width: 100%;
+    position: relative;
+}
+
+div.wrap div {
+    width: 100%;
+    position: absolute;
+}
+
+div.wrap div#toggle {
+    background-image: url('img/noeye.jpg');
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+
+div.btns {
+    margin-top: 100px;
+}
+
+button {
+    width: 200px;
+    background: #42a5f5;
+    color: #01579b;
+    font-size: 2rem;
+}
+
+@media (max-width: 1700px) {
+    div.btns {
+        margin-top: 50px;
+    }
+
+    button {
+        width: 100px;
+        font-size: 1.2rem;
+    }
+}

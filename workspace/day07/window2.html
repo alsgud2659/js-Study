@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        html {
+            overflow: hidden;
+        }
+        div {
+            text-align: right;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:opener.parent.location='window3.html';window.close();">
+        <img src="img/팝업.png">
+    </a>
+    <div>
+        <label>
+            <input type="checkbox" value="ok">
+            <span>오늘 하루동안 이 창을 열지 않기</span>
+        </label>
+    </div>
+</body>
+<script>
+    var checkbox = document.querySelector("input[type='checkbox']");
+    checkbox.addEventListener('click', function(){
+        var check = checkbox.checked;
+        if(check){
+            window.close();
+        }
+    });
+</script>
+</html>
