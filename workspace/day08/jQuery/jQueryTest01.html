@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 기초 예제</title>
+</head>
+<body>
+    <div>
+        <input type="text" class="num" value="1">
+    </div>
+    <div>
+        <input type="text" class="num" value="2">
+    </div>
+    <div>
+        <input type="text" class="num" value="3">
+    </div>
+    <div>
+        <button onclick="change()">변경(순수 javascript 사용)</button>
+        <button onclick="$('.num').css('border-color', 'red');">변경(jQuery 사용)</button>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function change(){
+        var inputs = document.querySelectorAll(".num");
+        inputs.forEach(function(input){
+            input.style.borderColor = "red";
+        })
+    }
+</script>
+</html>

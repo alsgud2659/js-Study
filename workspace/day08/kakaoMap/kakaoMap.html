@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 위치</title>
+</head>
+<body>
+    <h3>getCurruntPosition()으로 현재 위치 파악</h3>
+    <hr>
+    <div id="msg">이곳에 위치 정보 출력</div>
+    <!-- 지도 -->
+    <div id="map" style="width:500px;height:400px;"></div>
+</body>
+<!-- 
+1. 카카오 개발자사이트 (https://developers.kakao.com) 접속
+2. 개발자 등록 및 앱 생성
+3. 웹 플랫폼 추가: 앱 선택 – [플랫폼] – [Web 플랫폼 등록] – 사이트 도메인 등록
+4. 사이트 도메인 등록: [웹] 플랫폼을 선택하고, [사이트 도메인] 을 등록합니다. (예: http://localhost:8080)
+5. 페이지 상단의 [JavaScript 키]를 지도 API의 appkey로 사용합니다.
+6. 앱을 실행합니다. 
+-->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dddcfaf76dc282d71df78320125838b8"></script>
+<script>
+    navigator.geolocation.getCurrentPosition(function(position){
+        var now = new Date(position.timestamp);// 좌표를 구한 시간
+        var lat = position.coords.latitude; //위도
+        var lon = position.coords.longitude; //경도
+        var acc = position.coords.accuracy; //정확도(미터)
+        var temp = "";
+
+        //소수점 6째 자리로 자르기
+        lat = lat.toPrecision(6);
+        lon = lon.toPrecision(6);
+
+        temp += "좌표가 찍힌 시간 : " + now.toUTCString() + "<br>";
+        temp += "현재 좌표(위도 " + lat + "˚, 경도 " + lon + "˚)<br>";
+        temp += "정확도 " + acc + "m<br>";
+
+        document.getElementById("msg").innerHTML = temp;
+        
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition  = new kakao.maps.LatLng(lat, lon); 
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+    });
+</script>
+</html>

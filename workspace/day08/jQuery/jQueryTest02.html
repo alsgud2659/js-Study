@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQeury 기초 예제</title>
+</head>
+<body>
+    <ul class="car">
+        <li>벤츠</li>
+        <li>아우디</li>
+        <li>비엠더블유</li>
+    </ul>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    //li태그 전체 가져오기
+    var lists = $("li");
+
+    //클래스 이름이 car인 태그 전체 가져오기
+    var ul = $(".car");
+    console.log(lists);
+    //ul태그의 자식 태그 전부 가져오기
+    console.log(ul.children());
+    //자식 태그 중 첫번 째 자식의 내용 가져오기
+    console.log(ul.children().first().text());
+    //ul태그의 부모 태그(body) 가져오기
+    console.log(ul.parent());
+    //li태그의 부모 태그(ul) 가져오기
+    console.log(lists.parent());
+    //ul태그의 첫번째 자식을 삭제하기
+    ul.children().first().remove();
+    //ul태그 자식 중에서 0번째(첫번째)자식의 내용 가져오기
+    console.log(ul.children().eq(0).text());
+    //ul태그 마지막에 자식요소 추가하기
+    ul.append("<li>볼보</li>");
+    //ul태그 자식 중에서 2번째(세번째)자식의 내용 가져오기
+    console.log(ul.children().eq(2).text());
+    //속성 값 가져오기
+    //attr("속성명")
+    console.log(ul.attr("class"));
+    //속성 변경하기
+    //attr("속성명", "값")
+    ul.attr("class", "superCar");
+    console.log(ul.attr("class"));
+
+</script>
+</html>

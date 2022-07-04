@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트</title>
+</head>
+<body>
+    <ul class="dessert">
+        <li>커피</li>
+        <li>케이크</li>
+        <li>마카롱</li>
+        <li>휘낭시에</li>
+        <li>에그타르트</li>
+        <li>아이스크림</li>
+        <li>스무디</li>
+        <li>멘보샤</li>
+        <li>앙버터</li>
+        <li>레쓰비</li>
+    </ul>
+    <div style="cursor: pointer;">눌러보세요!</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const $div = $("ul").next();
+    const $ul =$("div").prev();
+
+    // $div.on("click", function(){
+    //     //$('선택자').show(밀리초): 보이기
+    //     //$('선택자').hide(밀리초): 숨기기
+    //     //$('선택자').toggle(밀리초): 보이면 숨겨주고 숨기면 보여주기
+    //     //밀리초를 주지 않으면 바로 사라짐
+    //     $ul.toggle();
+    // })
+    
+    // $div.on("click", function(){
+    //     //$('선택자').fadeIn(밀리초): 보이기
+    //     //$('선택자').fadeOut(밀리초): 숨기기
+    //     $ul.fadeToggle(3000);
+    // })
+    
+    // $div.on("click", function(){
+    //     //$('선택자').slideDown(밀리초): 보이기
+    //     //$('선택자').slideUp(밀리초): 숨기기
+    //     //밀리초를 주지 않아도 슬라이드 효과가 유지
+    //     $ul.slideToggle();
+    // })
+</script>
+</html>

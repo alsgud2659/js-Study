@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 전체동의</title>
+</head>
+<body>
+    <form action="" name="myForm">
+        <div>
+            <label>
+                전체 동의
+                <input type="checkbox" class="all">
+            </label>
+        </div>
+        <div>
+            <label>
+                서비스 이용약관 동의
+                <input type="checkbox" name="term1" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                정보수집 동의
+                <input type="checkbox" name="term2" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                개인 정보 이용약관 동의
+                <input type="checkbox" name="term3" class="term">
+            </label>
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var $all = $(".all");
+    var $inputs = $(".term");
+
+    //하나의 약관이라도 해제가 된다면 전체 동의 체크 해제
+    //각 항목이 모두 체크되면 전체 동의 체크
+
+    $all.on('click', function(){
+        if($(this).is(":checked")){
+            $inputs.prop('checked', true);
+        }else{
+            $inputs.prop('checked', false);
+        }
+    })
+
+    $inputs.on('click', function(){
+        var check = true;
+        if(!$(this).is(":checked")){
+            $all.prop('checked', false);
+        }
+        //선택자에서 :를 사용하면 동작에 관련된 태그를 선택할 수 있다.
+        //:hover, :active, :checked 등
+        //$('선택자').filter('선택자') : filter를 통해 전달한 선택자로 걸러낼 수 있다.
+        if($inputs.filter(":checked").length == 3){
+            $all.prop('checked', true);
+        }
+    });
+</script>
+</html>
