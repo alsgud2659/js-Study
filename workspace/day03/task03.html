@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습3</title>
+</head>
+<body>
+    <!-- 
+        분석 결과
+        --------------------------(hr)
+        통과!
+
+        정확한 암호가 입력될 때까지 계속 prompt()를 사용하여 암호를 입력받는다.
+        암호는 "호랑이"이다.
+
+     -->
+     <h3>분석 결과</h3>
+     <hr>
+
+</body>
+<script>
+    var code = "호랑이";
+
+    while(true){
+        let myCode = prompt("암호를 대시오.");
+        if(myCode == code){
+            document.write("<h2>통과!</h2>");
+            break;
+        }
+    }
+
+</script>
+</html>

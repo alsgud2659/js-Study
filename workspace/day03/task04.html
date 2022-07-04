@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습4</title>
+</head>
+<body>
+    <!-- 
+        pr("%", 5);
+        결과 : %%%%%
+
+        위의 결과가 나오는 함수를 선언하여 사용한다.
+        출력기능은 전달받은 콜백함수를 사용한다.
+     -->
+</body>
+<script>
+    var c = prompt("출력할 문자를 작성하세요.");
+    var count = prompt("몇번 출력하실 건가요?");
+
+    document.write("<h3>pr(<q>" + c + "</q>, " + count + ")</h3>")
+    document.write("<input type='button' onclick='pr(\"" + c + "\", " + count + ", " + print + ")' value='결과 확인'>");
+
+    function pr(str, count, callback){
+        if(callback){
+            var result = "";
+            for(let i=0; i<count; i++){
+                result += str;
+            }
+            callback(result)
+        }
+    }
+
+    function print(result){
+        document.write("<h4><span style=color:red>결과 : </span>" + result + "</h4>");
+    }
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역 함수</title>
+</head>
+<body>
+    <h2>전역 함수</h2>
+    <hr>
+</body>
+<script>
+    function checkGlobalFunctions(){
+        var result = eval("2*3+4*6");
+        var value = parseInt('hello');
+        console.log(typeof result);
+        document.write("eval('2*3+4*6')은 " + result + "<br>");
+
+        if(isNaN(value)){
+            console.log("숫자가 아닙니다.");
+        }else{
+            console.log("숫자입니다.");
+        }
+
+        if(isFinite(value)){
+            console.log("숫자입니다.");
+        }else{
+            console.log("숫자가 아닙니다.");
+        }
+    }
+
+    checkGlobalFunctions();
+
+</script>
+</html>
