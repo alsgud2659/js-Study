@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자를 이용한 선택</title>
+</head>
+<body>
+    <h1>CSS 선택자를 이용한 선택</h1>
+    <p class="odd">첫 번째 단락이에요!</p>
+    <ul>
+        <li class="odd">순대</li>
+        <li class="even">떡볶이</li>
+        <li class="odd">탕수육</li>
+        <li class="even">돈까스</li>
+        <li class="odd">피자</li>
+    </ul>
+</body>
+<script>
+    //querySelectorAll("선택자") : 선택자에 포함된 태그 전부 가져오기
+    //querySelector("선택자") : 선택자에 포함된 태그 중 첫번째로 찾은 태그 한 개 가져오기
+    const li_odd = document.querySelectorAll("li.odd");
+    const li_even = document.querySelectorAll("li.even");
+    const liAll = document.querySelectorAll("li");
+
+    //홀수는 글자색을 빨간색으로,
+    li_odd.forEach(function(li){
+        li.style.color = "red";
+    });
+    //짝수는 글자색을 마젠타(magenta)로 변경
+    for(let i=0; i<li_even.length; i++){
+        li_even[i].style.color = "magenta";
+    }
+
+    // 한 번에 처리(일괄 처리)
+    // liAll.forEach((li) => {
+    //     li.style.color = li.getAttribute("class") == 'odd' ? "red" : "magenta";
+    // });
+
+</script>
+</html>
